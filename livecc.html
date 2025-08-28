@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>𝓁𝑒𝑒𝓃𝒶'𝓈 𝓁𝒾𝓋𝑒 𝓈𝓊𝒷𝓉𝒾𝓉𝓁𝑒𝓈</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding-top: 20px;
+      position: relative;
+    }
+
+    /* Side images with slightly transparent */
+    .side-img {
+      position: fixed;
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(255,182,193,0.5);
+      z-index: 0;
+      opacity: 0.4; /* ✨ Slight transparency */
+    }
+    .left-img1 { top: 50px; left: 10px; }
+    .left-img2 { top: 500px; left: 10px; }
+    .right-img1 { top: 50px; right: 10px; }
+    .right-img2 { top: 500px; right: 10px; }
+
+    /* Middle image */
+    .middle-img {
+      width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(255,182,193,0.5);
+      margin: 15px;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #cc6699;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    #subtitles {
+      width: 80%;
+      max-width: 700px;
+      background: #fff0f6;
+      border: 3px solid #ff99cc;
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 1.5rem;
+      color: #660033;
+      line-height: 1.5;
+      box-shadow: 0 6px 12px rgba(255, 182, 193, 0.4);
+      margin-bottom: 20px;
+      min-height: 100px;
+      white-space: pre-wrap;
+      z-index: 1;
+      position: relative;
+    }
+
+    .btn {
+      margin: 5px;
+      padding: 12px 20px;
+      background: #ff99cc;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ff66b2;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    #notes {
+      width: 80%;
+      max-width: 700px;
+      padding: 10px;
+      border-radius: 15px;
+      border: 2px solid #ff99cc;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <!-- Side images -->
+  <img src="https://i.pinimg.com/736x/e9/93/9c/e9939c33517638f2f5836864e74778e5.jpg" class="side-img left-img1" />
+  <img src="https://i.pinimg.com/736x/20/2f/4b/202f4b406645334a05339df615645024.jpg" class="side-img left-img2" />
+  <img src="https://i.pinimg.com/736x/cf/9f/9f/cf9f9f578284b13efc0cb7a804f60d4f.jpg" class="side-img right-img1" />
+  <img src="https://i.pinimg.com/1200x/0a/16/4c/0a164c7eceea31e0ddf1e664759320c5.jpg" class="side-img right-img2" />
+
+  <!-- Middle image -->
+  <img src="https://i.pinimg.com/736x/a5/e5/71/a5e5711f4318fa4a9ce2d0e6923f1e0a.jpg" 
+       alt="cute pink aesthetic" class="middle-img" />
+
+  <h1>｡ﾟ•┈꒰ა ♡ 𝓁𝑒𝑒𝓃𝒶'𝓈 𝓁𝒾𝓋𝑒 𝒸𝒶𝓅𝓉𝒾𝓸𝓃𝓈 ♡ ໒꒱┈•｡ﾟ</h1>
+  <div id="subtitles">ʚ♡ɞ 𝓅𝓇𝑒𝓈𝓈 𝓈𝓉𝒶𝓇𝓉 𝓉𝑜 𝒷𝑒𝑔𝒾𝓃 ʚ♡ɞ⋅</div>
+
+  <div class="btn-row">
+    <button class="btn" id="startBtn">𝓈𝓉𝒶𝓇𝓉 𝓁𝒾𝓈𝓉𝑒𝓃𝒾𝓃𝑔</button>
+    <button class="btn" id="stopBtn">𝓈𝓉𝑜𝓅 𝓁𝒾𝓈𝓉𝑒𝓃𝒾𝓃𝑔</button>
+    <button class="btn" id="pauseBtn">𝓅𝒶𝓊𝓈𝑒</button>
+    <button class="btn" id="resumeBtn">𝓇𝑒𝓈𝓊𝓂𝑒</button>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" id="clearBtn">𝒸𝓁𝑒𝒶𝓇 𝓉𝑒𝓍𝓉</button>
+    <button class="btn" id="saveBtn">𝓈𝒶𝓋𝑒 𝒶𝓈 .𝓉𝓍𝓉</button>
+    <button class="btn" id="copyBtn">𝒸𝑜𝓅𝓎 𝓉𝑒𝓍𝓉</button>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn" id="smallFont">𝓈𝓂𝒶𝓁𝓁 𝒻𝑜𝓃𝓉</button>
+    <button class="btn" id="mediumFont">𝓂𝑒𝒹𝒾𝓊𝓂 𝒻𝑜𝓃𝓉</button>
+    <button class="btn" id="largeFont">𝓁𝒶𝓇𝑔𝑒 𝒻𝑜𝓃𝓉</button>
+  </div>
+
+  <textarea id="notes" placeholder="𝓌𝓇𝒾𝓉𝑒 𝓃𝑜𝓉𝑒𝓈 𝒽𝑒𝓇𝑒..."></textarea>
+  <button class="btn" id="saveNotesBtn">𝓈𝒶𝓋𝑒 𝓃𝑜𝓉𝑒𝓈</button>
+
+  <script>
+    const subtitles = document.getElementById("subtitles");
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const resumeBtn = document.getElementById("resumeBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const smallFont = document.getElementById("smallFont");
+    const mediumFont = document.getElementById("mediumFont");
+    const largeFont = document.getElementById("largeFont");
+    const notes = document.getElementById("notes");
+    const saveNotesBtn = document.getElementById("saveNotesBtn");
+
+    let recognition;
+    let isPaused = false;
+    let allText = "";
+
+    if ("webkitSpeechRecognition" in window) {
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = "en-US";
+
+      recognition.onresult = (event) => {
+        if (isPaused) return;
+        let transcript = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          transcript += event.results[i][0].transcript;
+        }
+        subtitles.textContent = transcript;
+        allText = transcript;
+      };
+
+      recognition.onerror = (event) => {
+        subtitles.textContent = "𝑜𝑜𝓅𝓈: " + event.error;
+      };
+
+      startBtn.onclick = () => {
+        recognition.start();
+        subtitles.textContent = "𝓁𝒾𝓈𝓉𝑒𝓃𝒾𝓃𝑔...";
+      };
+
+      stopBtn.onclick = () => {
+        recognition.stop();
+        subtitles.textContent = "𝓈𝓉𝑜𝓅𝓅𝑒𝒹 ";
+      };
+
+      pauseBtn.onclick = () => {
+        isPaused = true;
+        subtitles.textContent += "\n(𝓅𝒶𝓊𝓈𝑒𝒹)";
+      };
+
+      resumeBtn.onclick = () => {
+        isPaused = false;
+        subtitles.textContent += "\n(𝓇𝑒𝓈𝓊𝓂𝑒𝒹)";
+      };
+
+      clearBtn.onclick = () => {
+        subtitles.textContent = "𝒸𝓁𝑒𝒶𝓇𝑒𝒹";
+        allText = "";
+      };
+
+      saveBtn.onclick = () => {
+        const blob = new Blob([allText], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "captions.txt";
+        link.click();
+      };
+
+      copyBtn.onclick = () => {
+        navigator.clipboard.writeText(allText);
+        alert("Text copied!");
+      };
+
+      smallFont.onclick = () => { subtitles.style.fontSize = "1rem"; };
+      mediumFont.onclick = () => { subtitles.style.fontSize = "1.5rem"; };
+      largeFont.onclick = () => { subtitles.style.fontSize = "2rem"; };
+
+      saveNotesBtn.onclick = () => {
+        const blob = new Blob([notes.value], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "notes.txt";
+        link.click();
+      };
+
+    } else {
+      subtitles.textContent =
+        "𝓈𝓸𝓻𝓻𝔂, 𝓎𝓸𝓾𝓻 𝒷𝓇𝓸𝔀𝓈𝑒𝓻 𝒹𝓸𝑒𝓈𝓷'𝓉 𝓈𝓊𝓅𝓅𝓸𝓇𝓉 𝓈𝓅𝑒𝑒𝒸𝒽 𝓇𝑒𝒸𝓸𝑔𝓃𝒾𝓉𝒾𝓸𝓃 ";
+    }
+  </script>
+</body>
+</html>
